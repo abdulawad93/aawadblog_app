@@ -388,7 +388,7 @@ Finally, if the hashes match, the <em>successful login flag</em>, that has its a
   The email must have <em>a valid structure</em>, and this is verified by calling a method called isEmail from the <a href="https://www.npmjs.com/package/validator">Validator</a> npm package. This method returns <em>a boolean value.</em> If the email is not valid, a warning would appear as shown below.</p>
  <img src="./screenshots/warnings/unvalid_email.JPG/" alt="unvalid_email"/>
 <p>
-The final validation is related to the password. The password rules are listed below:
+The final validation is related to the password. The password <span id="password-reqs">requirements</span> are listed below:
 <ul>
 <li>Password length must be higher than or equal to 10 characters.</li>
 <li>Password must include, at least, one number.</li>
@@ -398,18 +398,23 @@ The final validation is related to the password. The password rules are listed b
 <li>Some special characters as whitespaces are not permitted.</li>
 </ul>
 If the user fails to follow the above rules and attempts to submit for registration, an alert appears with all of these rules as shown below.
-These rules get displayed using Bootstrap to show a tooltip when the user is hovering on the password input. State action methods, along with the password, get entered as an input to the custom validatePassword method.</p>
+These rules get displayed using <em>Bootstrap to show a tooltip</em> when the user is hovering on the password input. State action methods, along with the password, get entered as an input to the <em>custom validatePassword method.</em></p>
 <img src="./screenshots/warnings/invalid_password.JPG" alt="invalid-password"/>
 <p>
-Moreover, in validatePassword method some arrays, including lowercase letters, uppercase letters, special characters, number characters, unallowed characters, get defined and filled with integer numbers that are mapped to characters, using the fromCharCode method, based on the ASCII table.</br>
-The password passed to the method get converted to an array of characters using the spread operator. After all of these arrays are defined and filled, the process begin to check whether the password matches meets the required rules.
-Password length gets checked, by checking the length of the arrayOfCharacters. Then, for each of the other rules, for loop statements are set to go over all of the array input until there are no inputs left or the find method return one of the password characters that has a matching character with one of the other array inputs. If a match is found, break statement breaks the process out of the loop, also specialCharacterFlag set to true indicating that the password meets a specific requirment. On the other hand, if there was no match, then the password does not meet the specific requirement.</br>
-In the same same way unallowedCharacter array get compared to the array of character, but unlike the other checks, if match is found and unallowed character is set to true, then the password does not meet this requirment. Else, if no match is found, then the user meets the requirment.</br>
+Moreover, in validatePassword method some arrays, including <em>lowercase letters, uppercase letters, special characters, number characters, unallowed characters, </em>get defined and filled with integer numbers that are mapped to characters, using the fromCharCode method, based on the ASCII table.</p>
+<p>
+ The password gets passed to the method and gets transformed into an <em>array of characters using the spread operator.</em> After that, the process begins to check whether the password meets the requirements.</br>
+ <h5>Password Length Validity</h5>
+First, the <strong>password length requirment</strong> get checked by reading the length of the array of characters.</br>
+<h5>Number, Lowecase, Uppercase, and Special Characters Validity</h5>
+Then, for each of the other rules, <em>"for loop" statements</em> are set to go over all of the array input until there are <em>no inputs left</em> or the find method return one of the password characters that have a matching character with one of the other array inputs. If<em> a match is found</em>, the <em>break statement</em> breaks the process out of the loop, also, <strong>CharacterFlag</strong> gets set to true, indicating that the password meets a specific requirement. On the other hand, if there was no match, then the password does not meet the specific requirement.</br>
+<h5>Unallowed Characters Check</h5>
+In the same way, the <strong>unallowed character</strong> array gets compared to the array of characters, but unlike the other checks, if a match is found, and unallowed character is set to true, then the password does not meet this requirement. Else, if no match is found, then the user meets the requirements.</br>
 </p>
-<p>The entered username and email get their lettercases lower to lowercase and the same process happens in the login views. In the registeration view this process happens before the validation and before the submission to the http request. This is done using the npm package lodash, specifically toLower method.</br>
-Also, if there is whitespaces in the username input data, whether in the login view or registeration view, the whitespaces get removed using the replace method of Lodash which will replace this " " to this "". This is all done to improve the user experience. </p>
-<p>After that, the inputs get passed when calling register method from auth.service.js, and these inputs will be used as data in the POST http request with the path /auth/create-user/. The registration process will initiate the login process and http requests after the registration. </br>
-Finally, the user get redirected to the Login view, and if the user was logged in successfully, the user gets redirected to the Feed view. </p>
+<p>The <em>entered username and email</em> get their letter cases lower to lowercase, and the same process happens in the login views. In the <a href="#Register">registration</a> view, this process happens before the validation and before the submission to the HTTP request. That is done using the npm package <a href="https://www.npmjs.com/package/lodash">lodash</a>, specifically <em>toLower method.</em></br>
+Also, if there are whitespaces in the username input data, the whitespaces get removed using <em>the replace method of Lodash</em>, which replaces " " with "". That is all done to improve the user experience. </p>
+<p>After that, the inputs get passed when calling register method from auth.service.js, and these inputs get used as data in the POST HTTP request with the path <a href="#/auth/create-user/">/auth/create-user/</a>. The registration process intiates the login proces automatically</br>
+Finally, the user gets redirected to the <a href="#Login">Login view</a>, and if the user was logged in successfully, the user gets redirected to the <a href="#Feed">Feed</a> view. </p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Logout">Logout</h3>
