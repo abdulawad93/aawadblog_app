@@ -33,7 +33,7 @@ The app's backend uses Nodejs with express js as the used framework. User and co
 <hr style="border:2px solid gray"> </hr>
 </br>
 
-
+<h3 id="Users">Users</h3>
 <p><em>Users</em> collection has parameters including:
 <ul>
  <li>username</li>
@@ -60,7 +60,7 @@ The other parameters are optional, and users can set them through the frontend b
  
 </br>
 
-
+<h3 id="Posts">Posts</h3>
 <p><em>Posts</em> collection has parameters including:
  <ul>
   <li>title</li>
@@ -80,7 +80,7 @@ This array stores user IDs to ensure <em>no user can like a post twice</em>. Use
 <hr style="border:2px solid gray"> </hr>
 </br>
 
-
+<h3 id="Comments">Comments</h3>
 <p>
 Comments collection has parameters including:
  
@@ -111,7 +111,7 @@ Comments collection has parameters including:
 <p>Auth route call Mongoose methods to get, add, edit, or delete data of the <em>users</em> collection.</br>All the data that is sent from the server to the frontend are send in JSON format using <em>res.json(<response>)</em></p>
 <p>
  
-<h4>NPM Packages</h4>
+<h4 id="auth-npm-packages">NPM Packages</h4>
 
 <p>
  Unique npm packages that is used in this route, includes <em>bcrypt, moment, multer, and AWS.</em>
@@ -149,7 +149,7 @@ Comments collection has parameters including:
  
  
 </p>
- <h4>RESTfull Requests</h4>
+ <h4 id="auth-restfull-requests">RESTfull Requests</h4>
  <p>The main REST API requests are listed below:</p>
 <table>
  
@@ -220,21 +220,21 @@ Comments collection has parameters including:
 </br>
 
 
-<h3>API Route</h3>
+<h3 id="Api">API Route</h3>
 <p>API route calls Mongoose methods to get, add, edit, or delete data of both <em>posts and comments</em> collections.</p>
 
 
 </br>
 
 
-<h4>NPM Packages</h4>
+<h4 id="api-npm-packages">NPM Packages</h4>
 <p>There are no npm packages used in this route other than <em>express and body-parser</em></p>
 
 
 </br>
 
 
-<h4>RESTfull Requests</h4>
+<h4 id="api-restfull-requests">RESTfull Requests</h4>
 <p>The main REST API requests are listed below:</p>
 
 
@@ -362,7 +362,7 @@ This is a list of the views with the related path:
 
 <p>This view consists of two components only, which are the <a href="#Navbar">navbar</a> and the <a href="#WelcomeMsg">greetingMessage</a>.</p>
 </br>
-<h4>Process</h4>
+<h4 id="login-process">Process</h4>
 <p>If users are <em>already logged in</em> and attempt to reach the <a href="#Login>login</a> page, they get redirected to the <a href="#Feed">feed page</a>. <quote>The user is considered logged in if there is user data in the <em>local storage</em></quote></p>
  <p>If the user is <em>not already logged in</em>, the only two user inputs required are the username and the password. Any changes happening to the username or the password inputs get recorded in the <em>defined states</em> for each.</br>
  When the user hits the <em>submit button</em>, the login method gets called from auth.server.js with username, password, and warning state action methods as input.</p>
@@ -379,7 +379,7 @@ Finally, if the hashes match, the <em>successful login flag</em>, that has its a
 
 <p>This view consists of two components only, which are the <a href="#Navbar">navbar</a> and greeting message.</p>
 </br>
-<h4>Process</h4>
+<h4 id="register-login">Process</h4>
 <p>If users are <em>already logged in</em> and attempt to reach the <a href="#Login">login page</a>, they get redirected to the <a href="#Feed">feed page</a>. <quote>The user is considered logged in if there is user data in the local storage</quote></p>
 <p>If the user is <em>not already logged in</em>, the only user inputs required at this point to complete the registration are <em>username, password, and email.</em> <quote>"All of the inputs get stored in states."<quote> Each of these inputs should pass the validation process, which calls a method from auth.validation.js.</br>
  Furthermore, <em>username and email</em> gets compared to the stored values, in the pool of usernames and emails sent as a response from the HTTP request with the <a href="#/auth/get-all-users/">/auth/get-all-users/</a> route. As shown in the figure below, if a user types a username or an email that is already registered in the system, a live warning would appear.</p>
@@ -423,7 +423,7 @@ Finally, the user gets redirected to the <a href="#Login">Login view</a>, and if
 
 <p>This view consists of only one component, which is the naviagation bar. Also, it contain jumbotron and animation wheel from Bootstrap 4.5 CDN. This is to enhance user experience, and invite the user to reuse the app</p>
 </br>
-<h4>Process</h4>
+<h4 id="login-process">Process</h4>
 <p>The process here is simply showing the jumbotron content in a 2-second period before redirecting the user to the home page</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
@@ -433,7 +433,7 @@ Finally, the user gets redirected to the <a href="#Login">Login view</a>, and if
 
 <p>This view consists of only three components, which are the <a href="#Navbar">navigation bar</a>, the <a href="#NewPostInput">NewPostInput</a>, and the <a href="#Post">Post</a> components. Also, it contains a jumbotron that welcomes the users and mentions their usernames. </h3>
 </br>
-<h4>Process</h4>
+<h4 id="feed-process">Process</h4>
 <p>If users who <em>aren't logged in</em> attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the login page. <quote>The user is considered logged in if there is user data found in the <em>local storage</em></quote></br>The user data might be available in the storage. If the <em>expiration</em> date for the user login is less than the value of the current time of the compression process, the user gets removed and logged out. The user login session expires after one day of their login. </p>
 <p>If the <em>user is logged in</em>, the page will render normally. It will continue <em>rendering continuously</em> due to the update of the defined <em>posts array</em> which is a dependency of <em>the second useEffect</em> in the code. This improves the user experience by rendering <em>live content</em>. The posts array gets its content from the GET HTTP request with the path <a href="#/api/get-all-post/">/api/get-all-post/</a>.</br>
 Each of the posts gets its object data sent as a parameter of the <a href="#Post">Post</a> components. The map method gets the information of each post and passes the info in individual <a href="#Post">Post</a> components. </br>
@@ -446,7 +446,7 @@ The <a href="#NewPostInput">NewPostInput</a> component appears above the content
 
 <p>This view consists of only four components, which are the navigation bar, the profileImage, the newPostInput, and the Post components. Also, it contains jumbotron that show user information including username/display name and about statement.</p>
 </br>
-<h4>Process</h4>
+<h4 id="profile-process">Process</h4>
 <p>If users are <em>not already logged in</em> and attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the <a href="#Login">login page<Login>. <quote>The user is <em>considered logged in</em> if there is user data in the <em>local storage</em></quote></p>
 <p>If the user is logged in, similarly to the <a href="#Feed">Feed</a> page, posts will keep re-rendering to show <em>live content</em>. <em>useEffect</em> hook keeps the page re-rendering due to the <em>continuous update</em> of the posts array</p>
 <p>Besides the posts, the <a href="#NewPostInput">NewPostInput</a> component won't appear unless the <em>current user ID</em>, which is stored in the <em>local storage</em>, matches the user ID of the profile owner. The user ID of the profile's owner is provided as a response of the POST HTTP request of the path <a href"#/auth/get-user-id/">/auth/get-user-id/</a>.</br>
@@ -459,7 +459,7 @@ Also, the <em>user setting button</em> located in the <em>upper left corner</em>
 <p>This view consists of only six components, which are <a href="#Navbar">navigation bar</a>, <a href="#BootstrapTextInput">BootstrapTextInput</a>, <a href="#Label">Label</a>, <a href="#Dropdown">Dropdown</a>, <a href="#ImageInput>ImageInput</a>, and <a href="#ProfileImage">ProfileImage</a>.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
-<h4>Process</h4>
+<h4 id="settings-process">Process</h4>
  <p>If users are not already logged in and attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the <a href="#Login">login</a> page. The same will happen if the signed-in user is <em>not the target user</em> of the <a href="#Settings">settings</a> page.</p>
 <p>Each of the components takes some inputs. Furthermore, <strong><a href="#Dropdown">Dropdowns</a> take arrays, including days, months, years, and genders, <a href="#BootstrapTextInput">BootstrapTextInputs</a> take the label text, <a href="#Labels">Labels</a> take description texts, and <a href="#ProfileImage">profile image</a> takes the state value for the image.</strong> The <a href="#Dropdown">dropdowns</a> get description paramater.</br>
 All of the components in the <a href="#Setting">settings</a> view get sent state values and state action methods as params.</br>Also, setDaysAccordingToMonth function gets sent as a parameter for the months dropdown. It's not called in the <a href="#Dropdown">Dropdown</a> component's handler functions unless the description params are <em>"birth-month".</em></br>
@@ -496,7 +496,7 @@ When submit button is clicked, two HTTP requests gets called, which are the requ
 <p>Navbar include links to all of the <a href="Views">views</a>. Login and registers appear in <a href="#Login">Login</a>, <a href="#Register">Register</a>, and <a href="#Logout">Logout</a> views only, while the other links appear in the rest of the views only.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
-<h3 id="WelcomeMsg>WelcomeMsg</h3>
+<h3 id="WelcomeMsg">WelcomeMsg</h3>
 <img src="./screenshots/Components/WelcomeMsg.JPG" alt="greeting-message"/>
 <p>The message welcomes the user a specific action required from the user, whether it's <em>login, register, or both.</em></p>
 <hr style="border:2px solid gray"> </hr>
