@@ -348,7 +348,7 @@ This is a list of the views with the related path:
 </table>
 </br>
 <quote>Note that the <a href="https://www.npmjs.com/package/axios">Axios</a> npm package gets used in all the HTTP requests initiated from the frontend.</qoute>
-<h3 id="Home">Home</h3>
+<h3 id="Home"><a href="https://aawadblogapp.herokuapp.com/">Home</a></h3>
 
 <img src="./screenshots/views/home.JPG" alt="home-page-screenshot"/>
 
@@ -356,7 +356,7 @@ This is a list of the views with the related path:
  The page asks the user to login or register in order to proceed to the <a href="#Feed">feed</a> page.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
-<h3 id="Login">Login</h3>
+<h3 id="Login"><a href="https://aawadblogapp.herokuapp.com/login">Login</a></h3>
 
 <img src="./screenshots/views/login.JPG" alt="login-page-screenshot"/>
 
@@ -373,7 +373,7 @@ Finally, if the hashes match, the <em>successful login flag</em>, that has its a
  <img src="./screenshots/warnings/password_warning.JPG" alt="wrong-password"/>
 <hr style="border:2px solid gray"> </hr>
 </br>
-<h3 id="Register">Register</h3>
+ <h3 id="Register">a href="https://aawadblogapp.herokuapp.com/register">Register</a></h3>
 
 <img src="./screenshots/views/register.JPG" alt="register-page-screenshot"/>
 
@@ -427,17 +427,17 @@ Finally, the user gets redirected to the <a href="#Login">Login view</a>, and if
 <p>The process here is simply showing the jumbotron content in a 2-second period before redirecting the user to the home page</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
-<h3 id="Feed">Feed</h3>
+<h3 id="Feed"><a href="https://aawadblogapp.herokuapp.com/feed">Feed</a></h3>
 
 <img src="./screenshots/views/feed.JPG" alt="feed-page-screenshot"/>
 
-<p>This view consists of only three components, which are the navigation bar, the newPostInput, and the Post components. Also, it contains a jumbtron that welcome the users and mention their usernames. </h3>
+<p>This view consists of only three components, which are the <a href="#Navbar">navigation bar</a>, the <a href="#NewPostInput">NewPostInput</a>, and the <a href="#Post">Post</a> components. Also, it contains a jumbotron that welcomes the users and mentions their usernames. </h3>
 </br>
 <h4>Process</h4>
-<p>If users are not already logged in an attempt to reach the Feed page, they gets redirected to the login page. <quote>"The user is considered logged in if there is user data in the local storage"</quote></br>The user data might be found, but if the expiration date for the user login is less than the value of the current time of the compression process, the user will be removed of the local storage and an alert would be shown with the appropriate message for the situation. The user login session expires after one day of their login. </p>
-<p>If the user is logged in, the page will render normally. It will continue rendering continuously due to the update of the defined posts array which is a dependency of the second useEffect in the code. This improves the user experience by rendering <em>live content</em>. The posts array gets its content from the GET HTTP request with the path /api/get-all-post/.</br>
-Each of the posts gets its object data sent as parameter of the Post components. The map method, which is a replacement of the forEach method, get the information of each post and path the info in individual Post components. </br>
-The newPostInput component appears above the content, while passing the username and userID, to have them as input for the required http request in the component. </p>
+<p>If users who <em>aren't logged in</em> attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the login page. <quote>The user is considered logged in if there is user data found in the <em>local storage</em></quote></br>The user data might be available in the storage. If the <em>expiration</em> date for the user login is less than the value of the current time of the compression process, the user gets removed and logged out. The user login session expires after one day of their login. </p>
+<p>If the <em>user is logged in</em>, the page will render normally. It will continue <em>rendering continuously</em> due to the update of the defined <em>posts array</em> which is a dependency of <em>the second useEffect</em> in the code. This improves the user experience by rendering <em>live content</em>. The posts array gets its content from the GET HTTP request with the path <a href="#/api/get-all-post/">/api/get-all-post/</a>.</br>
+Each of the posts gets its object data sent as a parameter of the <a href="#Post">Post</a> components. The map method gets the information of each post and passes the info in individual <a href="#Post">Post</a> components. </br>
+The <a href="#NewPostInput">NewPostInput</a> component appears above the content while passing the <em>username and userID</em>, to have them as input for the required HTTP request in the component. </p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Profile">Profile</h3>
@@ -447,30 +447,30 @@ The newPostInput component appears above the content, while passing the username
 <p>This view consists of only four components, which are the navigation bar, the profileImage, the newPostInput, and the Post components. Also, it contains jumbotron that show user information including username/display name and about statement.</p>
 </br>
 <h4>Process</h4>
-<p>If users are not already logged in and attempt to reach the Feed page, they gets redirected to the login page. <quote>"The user is considered logged in if there is user data in the local storage"</quote></p>
-<p>If the user is logged in, similarly to the Feed page, posts will keep re-rendering to show <em>live content</em>. useEffect hook will keep the page re-rendering over and over due to the continuous update of the posts array, which is set as a dependency.</p>
-<p>Besides the posts, the new post input component won't appear unless the current user ID, that is stored in the local storage, matches the user ID of profile owner. The user ID of the profiles owner is provided as a response of the POST http request of the path /auth/get-user-id/.</br>
-Also, the User Setting button located in the upper left corner won't appear unless the current user is the profile owner</p>
+<p>If users are <em>not already logged in</em> and attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the <a href="#Login">login page<Login>. <quote>The user is <em>considered logged in</em> if there is user data in the <em>local storage</em></quote></p>
+<p>If the user is logged in, similarly to the <a href="#Feed">Feed</a> page, posts will keep re-rendering to show <em>live content</em>. <em>useEffect</em> hook keeps the page re-rendering due to the <em>continuous update</em> of the posts array</p>
+<p>Besides the posts, the <a href="#NewPostInput">NewPostInput</a> component won't appear unless the <em>current user ID</em>, which is stored in the <em>local storage</em>, matches the user ID of the profile owner. The user ID of the profile's owner is provided as a response of the POST HTTP request of the path <a href"#/auth/get-user-id/">/auth/get-user-id/</a>.</br>
+Also, the <em>user setting button</em> located in the <em>upper left corner</em> won't appear unless the current user is the profile owner</p>
 </br>
 <h3 id="Settings">userSettings</h3>
 
 <img src="./screenshots/views/settings.JPG" alt="settings-page-screenshot"/>
 
-<p>This view consists of only six components, which are navigation bar, BootstrapTextInput, Label, Dropdown, ImageInput, and ProfileImage.</p>
+<p>This view consists of only six components, which are <a href="#Navbar">navigation bar</a>, <a href="#BootstrapTextInput">BootstrapTextInput</a>, <a href="#Label">Label</a>, <a href="#Dropdown">Dropdown</a>, <a href="#ImageInput>ImageInput</a>, and <a href="#ProfileImage">ProfileImage</a>.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h4>Process</h4>
-<p>If users are not already logged in and attempt to reach the Feed page, they gets redirected to the login page. The same will happen if the signed in user is not the target user of the settings page.</p>
-<p>I have used Boostrap CDN instead of using Bootstrap npm packages to have a better control. Each of the components take some sort of input. Furthermore, Dropdowns take arrays, including days, months, years, and genders, BootstrapTextInputs take the label text, Labels take description texts, and profile image takes the state value for the image. The dropdowns, also, gets description params.</br>
-All of the components in the settings view get sent state values and state action methods as params. Also, setDaysAccordingToMonth function gets sent as a params for the months dropdown. It's not used in the Dropdown component unless the description params is "birth-month".</br>
-Moreover, whenever the month dropdown value get set setDaysAccordingToMonth gets called with the selected month as an input. The value then gets as an expression to a switch statment which sets the number of the days according to the selected month.</p>
-<p>Components sets the state values use the action methods sent. There are two buttons included in the settings view, one is "Clear Image in case the user don't want to use an image anymore, and the other one is submit button that is located in the top left of the screen to match the location of the settings button in the profile page.</br>
-When submit button is clicked two http requests gets called in auth.service.js, which are the requests with the routes /auth/save-user-info/ and /auth/save-profile-image/.</p>
-<p>Finally, whenever the pages refreshes, the stored information, which are retrieved from the http requests with the urls /auth/get-external-user-info/ and /auth/display-profile-image/, gets rendered in the page. That improved user experince.</p>
+ <p>If users are not already logged in and attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the <a href="#Login">login</a> page. The same will happen if the signed-in user is <em>not the target user</em> of the <a href="#Settings">settings</a> page.</p>
+<p>Each of the components takes some inputs. Furthermore, <strong><a href="#Dropdown">Dropdowns</a> take arrays, including days, months, years, and genders, <a href="#BootstrapTextInput">BootstrapTextInputs</a> take the label text, <a href="#Labels">Labels</a> take description texts, and <a href="#ProfileImage">profile image</a> takes the state value for the image.</strong> The <a href="#Dropdown">dropdowns</a> get description paramater.</br>
+All of the components in the <a href="#Setting">settings</a> view get sent state values and state action methods as params.</br>Also, setDaysAccordingToMonth function gets sent as a parameter for the months dropdown. It's not called in the <a href="#Dropdown">Dropdown</a> component's handler functions unless the description params are <em>"birth-month".</em></br>
+Moreover, whenever the month dropdown value gets set <em>setDaysAccordingToMonth</em> gets called with the selected month as the input. The value, then, gets used as an input to a switch statement, which sets the number of the days according to the selected month.</p>
+<p><em>Components</em> set the state values to use the <em>action methods</em> sent.</br>There are two buttons included in the <a href="#Settings">settings</a> view. One is labeled <em>"Clear Image"</em> in case the user <em>doesn't want to use an image anymore</em>, and the other is the </em>submit button</em> that is located in the <em>top left corner of the screen</em> to match the location of the settings button in the <a href="#Profile">profile</a> page.</br>
+When submit button is clicked, two HTTP requests gets called, which are the requests with the routes <a href="#/auth/save-user-info/">/auth/save-user-info/</a> and <a href="#/auth/save-profile-image/">/auth/save-profile-image/</a>.</p>
+<p>Finally, whenever the <a href="#Settings">settings</a> page refreshes, the stored information, which are retrieved from the HTTP requests with the routes <a href="#/auth/get-external-user-info/">/auth/get-external-user-info/</a> and <a href="#/auth/display-profile-image/">/auth/display-profile-image/</a>, gets rendered in the page. That <em>improves the user experince.</em></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Unspecified">Unspecified</h3>
-<p>This view doesn't have any components and only returns empty <div>. If users attempt to reach this view, they get redirected to the home page. With an alert indicating that the page is not available.</p>
+<p>This view doesn't have any components and only returns empty <div>. If users attempt to reach this view, they get redirected to the <a href="#Home">home</a> page. With an alert indicating that the page is not available.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 </br>
