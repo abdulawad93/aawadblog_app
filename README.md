@@ -373,7 +373,7 @@ Finally, if the hashes match, the <em>successful login flag</em>, that has its a
  <img src="./screenshots/warnings/password_warning.JPG" alt="wrong-password"/>
 <hr style="border:2px solid gray"> </hr>
 </br>
- <h3 id="Register">a href="https://aawadblogapp.herokuapp.com/register">Register</a></h3>
+ <h3 id="Register"><a href="https://aawadblogapp.herokuapp.com/register">Register</a></h3>
 
 <img src="./screenshots/views/register.JPG" alt="register-page-screenshot"/>
 
@@ -442,7 +442,7 @@ The <a href="#NewPostInput">NewPostInput</a> component appears above the content
 </br>
 <h3 id="Profile">Profile</h3>
 
-<img src="./screenshots/views/profile.JPG"alt="profile-page-screenshot"/>
+<img src="./screenshots/views/profile.JPG" alt="profile-page-screenshot"/>
 
 <p>This view consists of only four components, which are the navigation bar, the profileImage, the newPostInput, and the Post components. Also, it contains jumbotron that show user information including username/display name and about statement.</p>
 </br>
@@ -492,46 +492,46 @@ When submit button is clicked, two HTTP requests gets called, which are the requ
 </ul>
 </p>
 <h3 id="Navbar">Navbar</h3>
-<p>Navbar include links to all of the <a href="Views">views</a>. Login and registers appears in Login, Register, and Logout views only, while the other links appear in the rest of the views only.</p>
+<p>Navbar include links to all of the <a href="Views">views</a>. Login and registers appear in <a href="#Login">Login</a>, <a href="#Register">Register</a>, and <a href="#Logout">Logout</a> views only, while the other links appear in the rest of the views only.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="WelcomeMsg>WelcomeMsg</h3>
-<p>The message welcome the user an specify action required from the user whether it's login, register, or both.</p>
+<p>The message welcomes the user a specific action required from the user, whether it's <em>login, register, or both.</em></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="NewPostInput">NewPostInput</h3>
-This component accepts user input of both post title and post content. When the user hits submit, if both title and content inputs have text, a POST http request with the path /api/add-post/ get send with the input. If one of or both inputs are not filled with information, warning labels appear.</p> 
+This component accepts the user input of both post's title and post's content. When the user hits submit, if both title and content inputs have text, a POST HTTP request with the path <a href="#/api/add-post/">/api/add-post/</a> get sent with the input. If one of or both inputs does not have values, <em>warning labels appear.</em></p> 
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Post">Post</h3>
-<p>Post components, as mentioned previously in the description for Feed and Profile views, get it date from the posts array which gets mapped into seprate array entries using the Map methods</p>
+<p><a href="#Post">Post</a> components, as mentioned previously in the description for <a href="#Feed">Feed</a> and <a href="#Profile">Profile</a> views, get its data from the posts array, which gets mapped into separate array entries using the Map method</p>
 <h4>Structure & Process</h4>
-<p>Post gets the parameters, content, title, date, publisher "username", post user ID, current user ID, Likers "Array of user IDs", and post ID</p>
-<p>This information is used to structure each post as shown in  figure 2.x. The post ID is used in the Patch http request with the path /api/edit-post/. The length of likers array determine the number of likes.</br>
-The currest used ID gets compared to the IDs in the likers array. furthermore, if the user ID is not found in the array, this indicates that the user did not like the post already, and the user can like the post. 
-That will intiate the POST http request with the route /api/add-like/. On the other hand, if the current user ID matches one of the IDs in the array, the user can unlike the post by intiating the http request /api/remove-like/</p>
-<p>The user ID is sent with a POST http request with the route /auth/get-user-external info and a POST http request with the route /auth/get-user-profile-image/user/:userID to get the user display name, gender, and profile image.</br>
-Display name will be displayed instead of the publisher username if available. The image will be displayed if available; otherwise, a default image will be rendered based on the gender of the publisher.</br>
-Finally, Post component links to CommentSection which appears and disappear, with jQuery/DOM animation applied, by clicking on the comments button.</p>
+<p>Post gets the parameters, <em>content, title, date, publisher "username", post user ID, current user ID, Likers "Array of user IDs", and post ID</em></p>
+<p>This information is used to structure each post. The <em>post ID</em> is used in the PATCH HTTP request with the path <a href="#/api/edit-post/">/api/edit-post/</a>. The <em>length of likers</em> array determine the <em>number of likes.</em></br>
+The current used ID gets <em>compared to</em> the IDs in the likers array. furthermore, if the <em>user ID</em> is not found in the array, this indicates that the <em>user did not like the post already</em>, and the user can like the post.
+That will initiate the POST HTTP request with the route <a href="/api/add-like/">/api/add-like/</a>. On the other hand, if the current user ID matches one of the IDs in the array, the <em>user can unlike</em> the post by intiating the http request <a href="#/api/remove-like/">/api/remove-like/</a></p>
+<p>The user ID is sent with a POST HTTP request with the route <a href="#/auth/get-user-external/">/auth/get-user-external/</a> info and a POST HTTP request with the route <a href="#/auth/get-user-profile-image/user/:userID/">/auth/get-user-profile-image/user/:userID/</a> to get the <em>user display name, gender, and profile image.</em></br>
+<em>Display name</em> will be displayed instead of the publisher username if available. The image will be displayed if available; otherwise, a <em>default image</em> will be rendered based on the gender of the publisher.</br>
+Finally, <a href="#Post">Post</a> component links to the <a href="#CommentSection">CommentSection</a> which appears and disappears, with jQuery/DOM animation applied, by clicking on the comments button.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="CommentSection">CommentSection</h3>
-<p>CommentSection keeps re-rendering the page with live comments by continuesly upadding the comments array.</br>
-This component includes both Comment Input and Comment components. The Comment component gets multiplied depending on the number of the length of the comments array.</p>
+<p><a href="#CommentSection">CommentSection</a> keeps re-rendering the page with <em>live comments</em> by continuesly upadding the comments array.</br>
+This component includes both <a href="#CommentInput">CommentInput</a> and <a href="#Comment">Comment</a> components. The <a href="#Comment">Comment</a> component gets multiplied depending on the <em>comments array's length.</em></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="CommentInput">CommentInput</h3>
-<p>Comment Input can be used for either adding a comment with a content only "no title", or editting a comment once triggered from the Comment component.</p>
+<p>CommentInput can be used for either adding a comment with content only or editing a comment once triggered from the Comment component.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Comment">Comment</h3>
-<p>Comment display comment content and either display name or username. If the current user in the local storage match the user ID associated with the comment, two control buttons, edit or remove, get displayed to the user</br>
-Furthermore, the edit function triggers a state the let the CommentInput to switch to edit mode, and when the edit is done a Patch http request with the path /api/edit-comment update the comment content for the comment with the sent comment ID</br>
-Delete button send a Delete http request with the path /api/delete-comment/:commentID/</p>
+<p>Comment display comment content and either <<em>display name or username.</em> If the current user in the <em>local storage</em> matches the user ID associated with the comment, two control buttons, <em>edit or remove</em>, get displayed to the user</br>
+Furthermore, the edit function triggers a state the let the <a href="#CommentInput">CommentInput</a> switch to edit mode, and when the edit button gets clicked, a PATCH HTTP request with the path <a href="#/api/edit-comment/">/api/edit-comment/</a> update the comment content for the comment with the sent comment ID</br>
+<strong>Delete button</strong> send a DELETE http request with the route <a href="#/api/delete-comment/:commentID/">/api/delete-comment/:commentID/</a></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="ProfileImage">ProfileImage</h3>
-<p>ProfileImage set the image state with the user image the return as a result of the POST http request with the path /auth/get-user/profile-image/user/:userID/.</p>
+<p>ProfileImage set the image state with the user image the return as a result of the POST http request with the path <a href="#/auth/get-user/profile-image/user/:userID/">/auth/get-user/profile-image/user/:userID/</a>.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="BootstrapTextInput">BootstrapTextInput</h3>
@@ -543,10 +543,13 @@ Delete button send a Delete http request with the path /api/delete-comment/:comm
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="ImageInput">ImageInput</h3>
-<p>Image input accepts either jpeg or png filemimes. The file data then gets stored into a new file object that changes the name of the image to match the username and sets the extention as jpeg.</br>
-Furthermore, the a URL object of the image set the image state to let users preview images before submission. Also, the image data and name gets appended in a FormData object, which get used by multer package in the backend to store the image in the memory storage before it being handled by AWS S3.
+<p>Image input accepts either <em>jpeg or png filemimes.</em> The file data then gets stored into a new file object that changes the name of the image to <em>match the username and sets the extension as a jpeg.</em></br>
+Furthermore, the URL object of the image sets the image state to let users preview images before submission. Also, the image data and name gets appended in a FormData object, which gets used by the <a href="#Multer">Multer</a> package in the backend to store the image in the <em>memory storage before it is handled by AWS S3.</em>
 </p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Label">Label</h3>
 <p>Label simply displays whatever text sent by the label text param.</p>
+<hr style="border:2px solid gray"> </hr>
+</br>
+</br>
