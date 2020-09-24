@@ -492,18 +492,23 @@ When submit button is clicked, two HTTP requests gets called, which are the requ
 </ul>
 </p>
 <h3 id="Navbar">Navbar</h3>
+<img src="./screenshots/Components/Navbar.JPG" alt="naviagation-bar"/>
 <p>Navbar include links to all of the <a href="Views">views</a>. Login and registers appear in <a href="#Login">Login</a>, <a href="#Register">Register</a>, and <a href="#Logout">Logout</a> views only, while the other links appear in the rest of the views only.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="WelcomeMsg>WelcomeMsg</h3>
+<img src="./screenshots/Components/WelcomeMsg.JPG" alt="greeting-message"/>
 <p>The message welcomes the user a specific action required from the user, whether it's <em>login, register, or both.</em></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="NewPostInput">NewPostInput</h3>
+<img src="./screenshots/Components/NewPostInput.JPG" alt="new-post-input"/>
 This component accepts the user input of both post's title and post's content. When the user hits submit, if both title and content inputs have text, a POST HTTP request with the path <a href="#/api/add-post/">/api/add-post/</a> get sent with the input. If one of or both inputs does not have values, <em>warning labels appear.</em></p> 
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Post">Post</h3>
+<img src="./screenshots/Components/Post.JPG" alt="post"/>
+<img src="./screenshots/Components/post_b.JPG" alt="post-edit"/>
 <p><a href="#Post">Post</a> components, as mentioned previously in the description for <a href="#Feed">Feed</a> and <a href="#Profile">Profile</a> views, get its data from the posts array, which gets mapped into separate array entries using the Map method</p>
 <h4>Structure & Process</h4>
 <p>Post gets the parameters, <em>content, title, date, publisher "username", post user ID, current user ID, Likers "Array of user IDs", and post ID</em></p>
@@ -516,39 +521,47 @@ Finally, <a href="#Post">Post</a> component links to the <a href="#CommentSectio
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="CommentSection">CommentSection</h3>
+<img src="./screenshots/Components/CommentSection.JPG" alt="comment-section"/>
 <p><a href="#CommentSection">CommentSection</a> keeps re-rendering the page with <em>live comments</em> by continuesly upadding the comments array.</br>
 This component includes both <a href="#CommentInput">CommentInput</a> and <a href="#Comment">Comment</a> components. The <a href="#Comment">Comment</a> component gets multiplied depending on the <em>comments array's length.</em></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="CommentInput">CommentInput</h3>
+<img src="./screenshots/Components/CommentInput.JPG" alt="comment-input"/>
 <p>CommentInput can be used for either adding a comment with content only or editing a comment once triggered from the Comment component.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Comment">Comment</h3>
-<p>Comment display comment content and either <<em>display name or username.</em> If the current user in the <em>local storage</em> matches the user ID associated with the comment, two control buttons, <em>edit or remove</em>, get displayed to the user</br>
+<img src="./screenshots/Components/Comment.JPG" alt="comment"/>
+<p>Comment display comment content and either <em>display name or username.</em> If the current user in the <em>local storage</em> matches the user ID associated with the comment, two control buttons, <em>edit or remove</em>, get displayed to the user</br>
 Furthermore, the edit function triggers a state the let the <a href="#CommentInput">CommentInput</a> switch to edit mode, and when the edit button gets clicked, a PATCH HTTP request with the path <a href="#/api/edit-comment/">/api/edit-comment/</a> update the comment content for the comment with the sent comment ID</br>
 <strong>Delete button</strong> send a DELETE http request with the route <a href="#/api/delete-comment/:commentID/">/api/delete-comment/:commentID/</a></p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="ProfileImage">ProfileImage</h3>
+<img src="./screenshots/Components/ProfileImage.JPG" alt="profile-image"/>
 <p>ProfileImage set the image state with the user image the return as a result of the POST http request with the path <a href="#/auth/get-user/profile-image/user/:userID/">/auth/get-user/profile-image/user/:userID/</a>.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="BootstrapTextInput">BootstrapTextInput</h3>
+<img src="./screenshots/Components/BootstrapTextInput.JPG" alt="bootstrap-text-input"/>
 <p>This component receives label text as param and set the states using the sent state action method.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Dropdown">Dropdown</h3>
+<img src="./screenshots/Components/Dropdown.JPG" alt="dropdown"/>
 <p>This component receives an array of strings and use the map method to create option elements, based on the array length, within the select element.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="ImageInput">ImageInput</h3>
+<img src="./screenshots/Components/ImageInput.JPG" alt="image-input"/>
 <p>Image input accepts either <em>jpeg or png filemimes.</em> The file data then gets stored into a new file object that changes the name of the image to <em>match the username and sets the extension as a jpeg.</em></br>
 Furthermore, the URL object of the image sets the image state to let users preview images before submission. Also, the image data and name gets appended in a FormData object, which gets used by the <a href="#Multer">Multer</a> package in the backend to store the image in the <em>memory storage before it is handled by AWS S3.</em>
 </p>
 <hr style="border:2px solid gray"> </hr>
 </br>
 <h3 id="Label">Label</h3>
+<img src="./screenshots/Components/Label.JPG" alt="label"/>
 <p>Label simply displays whatever text sent by the label text param.</p>
 <hr style="border:2px solid gray"> </hr>
 </br>
