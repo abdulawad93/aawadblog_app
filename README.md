@@ -448,7 +448,7 @@ The <a href="#NewPostInput">NewPostInput</a> component appears above the content
 <p>This view consists of only four components, which are the navigation bar, the profileImage, the newPostInput, and the Post components. Also, it contains jumbotron that show user information including username/display name and about statement.</p>
 </br>
 <h4 id="profile-process">Process</h4>
-<p>If users are <em>not already logged in</em> and attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the <a href="#Login">login page<Login>. <quote>The user is <em>considered logged in</em> if there is user data in the <em>local storage</em></quote></p>
+<p>If users are <em>not already logged in</em> and attempt to reach the <a href="#Feed">Feed</a> page, they get redirected to the <a href="#Login">login page</a>. <quote>The user is <em>considered logged in</em> if there is user data in the <em>local storage</em></quote></p>
 <p>If the user is logged in, similarly to the <a href="#Feed">Feed</a> page, posts will keep re-rendering to show <em>live content</em>. <em>useEffect</em> hook keeps the page re-rendering due to the <em>continuous update</em> of the posts array</p>
 <p>Besides the posts, the <a href="#NewPostInput">NewPostInput</a> component won't appear unless the <em>current user ID</em>, which is stored in the <em>local storage</em>, matches the user ID of the profile owner. The user ID of the profile's owner is provided as a response of the POST HTTP request of the path <a href"#/auth/get-user-id/">/auth/get-user-id/</a>.</br>
 Also, the <em>user setting button</em> located in the <em>upper left corner</em> won't appear unless the current user is the profile owner</p>
