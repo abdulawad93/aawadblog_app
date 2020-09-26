@@ -8,7 +8,7 @@
 This application was build using the React library, including components and hooks. All of the components used in this project are custom.
 The app's backend uses Nodejs with express js as the used framework. User and content data are stored in MongoDB using Mongoose.</p>
 </br>
-Here is a live link for the App: https://aawadblogapp.herokuapp.com/
+Here is a live link for the App: https://aawadblogapp.herokuapp.com/.</br>
 If you don't want to create an account, you can use the credentials below.
 <p>
  username: testing</br>
