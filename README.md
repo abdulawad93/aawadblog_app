@@ -9,6 +9,11 @@ This application was build using the React library, including components and hoo
 The app's backend uses Nodejs with express js as the used framework. User and content data are stored in MongoDB using Mongoose.</p>
 </br>
 Here is a live link for the App: https://aawadblogapp.herokuapp.com/
+If you don't want to create an account, you can use the credentials below.
+<p>
+ username: testing</br>
+ password: 1234ABcd$$
+</p>
 
 
 <h1 align="center">Backend</h1>
